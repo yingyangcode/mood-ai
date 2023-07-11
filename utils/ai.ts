@@ -5,8 +5,9 @@ import { PromptTemplate } from 'langchain/prompts'
 import { parse } from 'path'
 import {Document} from 'langchain/document'
 import {loadQARefineChain} from 'langchain/chains'
-import {OpenAIEmbeddings} from 'langchain/embeddings'
+import {OpenAIEmbeddings} from 'langchain/embeddings/openai'
 import {MemoryVectorStore} from 'langchain/vectorstores/memory'
+
 const parser = StructuredOutputParser.fromZodSchema(
     z.object({
         mood: z.string().describe('the mood of the person who wrote the journal entry.'),
